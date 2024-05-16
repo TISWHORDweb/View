@@ -2,14 +2,15 @@ import React from 'react'
 import Navbar from '../../Components/Navbar'
 import ContactCard from '../../Components/ContactCard'
 import Footer from '../../Components/Footer'
+import SingleVideo from '../../Components/SingleVideo'
 
 function ViewVideo() {
   return (
     <div>
-        <Navbar />
+        <Navbar color="black" />
+        <SingleVideo />
         <ContactCard />
         <Footer />
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur odio possimus eligendi atque distinctio molestias voluptatibus dignissimos, ex dolor aut inventore id vel totam quibusdam ipsum doloribus itaque enim dolorem.
     </div>
   )
 }

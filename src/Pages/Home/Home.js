@@ -27,7 +27,7 @@ function Home() {
         </div>
        
       </div>
-      <Navbar />
+      <Navbar color="white"/>
         <Banner />
       <Features />
       <Experience />

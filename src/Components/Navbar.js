@@ -4,7 +4,7 @@ import { REACT_APP_USER_BASE_URL } from '../Utils/Urls';
 import { Link, useNavigate } from 'react-router-dom'
 import { Check } from '../Utils/Core'
 
-function Navbar() {
+function Navbar(props) {
   const [check, setCheck] = useState()
   const [token, setToken] = useState()
   const [firstName, setFirstname] = useState("")
@@ -135,6 +135,7 @@ function Navbar() {
           </div>
         </div>
       </div>
+      <div className="">
       <div className="Navbar">
         <nav class="navbar navbar-expand-lg ">
           <div class="container">
@@ -148,21 +149,21 @@ function Navbar() {
               <ul class="navbar-nav m-auto mt-0 mb-2 mb-lg-0">
                 <li class="nav-item">
                   <Link to="/">
-                    <span class="nav-link " aria-current="page" >Home</span>
+                    <span class={`nav-link ${props.color}`}  aria-current="page" >Home</span>
                   </Link>
                 </li>
                 <li class="nav-item">
-                  <span class="nav-link " aria-current="page" >Videos</span>
+                  <span class={`nav-link ${props.color}`} aria-current="page" >Videos</span>
                 </li>
                 {check === "true" ?
                   <li class="nav-item">
                     <Link to="/app/contact">
-                      <span class="nav-link" >Contact</span>
+                      <span class={`nav-link ${props.color}`}  >Contact</span>
                     </Link>
                   </li> : <></>}
                 
                 <li class="nav-item">
-                  <span class="nav-link " aria-current="page" >About us</span>
+                  <span class={`nav-link ${props.color}`}  aria-current="page" >About us</span>
                 </li>
               </ul>
               <div className="animate__animated animate__fadeInRight">
@@ -173,6 +174,7 @@ function Navbar() {
             </div>
           </div>
         </nav>
+      </div>
       </div>
     </div>
   )

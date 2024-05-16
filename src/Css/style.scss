@@ -55,6 +55,11 @@ select {
 .white{
   color:var(--color-white)
 }
+.minute{
+font-weight: 400;
+background-color: var(--color-primary);
+padding: 10px 15px;
+}
 .primary{
   color:var(--color-primary) !important
 }
@@ -62,14 +67,23 @@ h1,h2,h3,h4,h5,h6 {
   color: var(--color-primary);
   font-weight: 600;
 }
-
+.navHeight{
+  height: 60px;
+  position: relative;
+}
+.m50{
+  padding: 50px 0;
+}
 .Navbar .navbar-brand {
   color: var(--color-primary);
   font-weight: 600;
 }
+.black{
+  color: #07070C;
+}
 .Navbar .nav-link {
-  color: var(--color-white);
-  font-weight: 400;
+  // color: var(--color-white);
+  font-weight: 500;
   margin: 0 10px;
   font-size: 15px;
   cursor: pointer;

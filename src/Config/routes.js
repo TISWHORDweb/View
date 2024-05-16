@@ -33,7 +33,7 @@ export const Routes = () => {
     },
     {
       path: '/app/video/view',
-      element: < Login />
+      element: < ViewVideo />
     },
     {
       path: '/app/contact/view/:id',
