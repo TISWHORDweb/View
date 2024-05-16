@@ -5,6 +5,7 @@ import Login from '../Pages/Auth/Login';
 import Signup from '../Pages/Auth/Signup';
 import Contact from '../Pages/Contact.js/Contact';
 import View from '../Pages/Contact.js/View';
+import ViewVideo from '../Pages/Video/ViewVideo';
 // import { PrivateRoute } from '../Components/PrivateRoutes';
 
 
@@ -29,6 +30,10 @@ export const Routes = () => {
     {
       path: '/app/contact',
       element: < Contact />
+    },
+    {
+      path: '/app/video/view',
+      element: < Login />
     },
     {
       path: '/app/contact/view/:id',

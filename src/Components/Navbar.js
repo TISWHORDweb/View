@@ -139,7 +139,7 @@ function Navbar() {
         <nav class="navbar navbar-expand-lg ">
           <div class="container">
             <Link to="/">
-              <span class="navbar-brand" href="#">REACH</span>
+              <span class="navbar-brand" href="#">VIEW</span>
             </Link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -151,21 +151,22 @@ function Navbar() {
                     <span class="nav-link " aria-current="page" >Home</span>
                   </Link>
                 </li>
+                <li class="nav-item">
+                  <span class="nav-link " aria-current="page" >Videos</span>
+                </li>
                 {check === "true" ?
                   <li class="nav-item">
                     <Link to="/app/contact">
                       <span class="nav-link" >Contact</span>
                     </Link>
                   </li> : <></>}
-                <li class="nav-item">
-                  <span class="nav-link " aria-current="page" >Pricing</span>
-                </li>
+                
                 <li class="nav-item">
                   <span class="nav-link " aria-current="page" >About us</span>
                 </li>
               </ul>
               <div className="animate__animated animate__fadeInRight">
-                {check === "true" ?
+                {check === "false" ?
                   <button class="bn632-hover bn21" type="submit" data-bs-toggle="modal" data-bs-target="#createModal">Create Contact</button> :
                   <Link to="/auth/login">  <button class="bn632-hover bn21" type="submit">Get Started</button></Link>}
               </div>
