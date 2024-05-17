@@ -12,7 +12,7 @@ body{
     width: 78px;
     padding: 6px 14px;
     z-index: 1;
-    background-color: var(--color-default);
+    background-color: var(--color-primary);
     transition: all .5s ease;
     /* position:fixed; */
     top: 0;
@@ -53,12 +53,13 @@ body{
 
 .sidebar .logo_details img{
     width: 20%;
-    margin: 0 10px;
+    
 }
 
 .sidebar .logo_details .icon{
     opacity: 0;
     transition: all 0.5s ease;
+    margin: 0 10px;
 }
 
 .sidebar .logo_details .logo_name{

@@ -165,7 +165,6 @@ function View() {
                                     </svg>)} id="editModal">
                                         <EditContact data={contact} />
                                     </Modal>
-
                                 </div>
                             </div>
                         </div>

@@ -4,7 +4,7 @@ function Modal(props) {
     return (
         <div>
             <div className="PatientModal ">
-                <button type="button" class={`btnNoBg ${props.class}`} data-bs-toggle="modal" data-bs-target={"#"+props.id}>
+                <button type="button" class={`bn632-hover bn21 ${props.class}`} data-bs-toggle="modal" data-bs-target={"#"+props.id}>
                     {props.title}
                 </button>
                 <div class="modal fade" id={props.id} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

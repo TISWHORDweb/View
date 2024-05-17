@@ -58,6 +58,89 @@ select {
   color: var(--color-white);
 }
 
+.nav {
+  background-color: white;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  border-bottom: 1px solid rgba(221, 221, 221, 0.8666666667);
+}
+.nav .search {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--color-dull-white);
+  max-height: 35px;
+  align-items: center;
+  display: flex;
+}
+.nav .search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 300px;
+  margin: 0px 20px;
+}
+
+.LinkHeader {
+  background-color: var(--color-primary);
+  padding: 10px 20px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.LinkHeader a li {
+  margin: 0 10px;
+  font-size: 13px;
+  color: var(--color-white);
+  cursor: pointer;
+}
+.LinkHeader a li:hover {
+  color: var(--color-black) !important;
+}
+.LinkHeader a:hover {
+  color: var(--color-black) !important;
+}
+.LinkHeader .this {
+  color: var(--color-black);
+  margin-left: 10px;
+}
+
+.Table {
+  background-color: var(--color-body);
+  padding: 20px;
+  padding-bottom: 0;
+  border-radius: 20px;
+}
+.Table table thead {
+  background-color: var(--color-default) !important;
+  color: white;
+}
+.Table table thead th {
+  font-size: 16px !important;
+}
+.Table table tbody tr {
+  margin-bottom: 10px !important;
+  color: gray !important;
+  cursor: pointer;
+  font-size: 14px;
+}
+.Table table tbody tr td,
+.Table table tbody tr th {
+  color: gray !important;
+}
+.Table .down {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Table .down li,
+.Table .down span {
+  color: var(--color-second) !important;
+  background-color: transparent;
+}
+
 .minute {
   font-weight: 400;
   background-color: var(--color-primary);
@@ -68,7 +151,12 @@ select {
   color: var(--color-primary) !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--color-primary);
   font-weight: 600;
 }
@@ -80,6 +168,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .m50 {
   padding: 50px 0;
+}
+
+.m20 {
+  padding: 20px 0;
 }
 
 .Navbar .navbar-brand {
@@ -444,6 +536,139 @@ ul {
   padding: 30px;
 }
 
+.navbarDisplay {
+  display: none !important;
+}
+
+.Inner {
+  overflow: scroll;
+  height: 91.2vh;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+}
+.Inner::-webkit-scrollbar {
+  display: none;
+}
+
+.BannerDetails .sets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--color-white);
+  padding: 30px 50px;
+}
+.BannerDetails .sets .set1 {
+  display: flex;
+  align-items: center;
+}
+.BannerDetails .sets .set1 h2 {
+  font-weight: 600;
+  color: var(--color-default);
+}
+.BannerDetails .sets .set1 p {
+  color: var(--color-grey);
+  font-size: 15px;
+}
+.BannerDetails .sets .set1 img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cards .set {
+  background-color: var(--color-white);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  border-radius: 20px;
+  padding: 20px;
+}
+.cards .set .opt1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cards .set .opt1 p {
+  color: var(--color-black);
+  font-size: 18px;
+}
+.cards .set .opt1 svg {
+  color: var(--color-grey);
+}
+.cards .set .task,
+.cards .set .due,
+.cards .set .proposal,
+.cards .set .open {
+  text-align: center;
+}
+.cards .set .task h1,
+.cards .set .due h1,
+.cards .set .proposal h1,
+.cards .set .open h1 {
+  font-size: 100px;
+  line-height: 80px;
+}
+.cards .set .task p,
+.cards .set .due p,
+.cards .set .proposal p,
+.cards .set .open p {
+  font-size: 18px;
+}
+.cards .set .due {
+  color: var(--color-blue);
+}
+.cards .set .task {
+  color: var(--color-red);
+}
+.cards .set .open {
+  color: var(--color-orange);
+}
+.cards .set .proposal {
+  color: var(--color-green);
+}
+.cards .set .down {
+  color: var(--color-grey);
+}
+
+.card-header {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+}
+
+.news .bg-soft-pink {
+  background-color: rgba(253, 60, 151, 0.08) !important;
+  color: var(--color-primary) !important;
+}
+.news .btn {
+  background-color: var(--color-primary);
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  font-size: 13px;
+  border-radius: 3px;
+}
+.news .newsHeading {
+  display: block;
+  display: -webkit-box;
+  margin: 0.5rem 0px;
+  height: 3.6em;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.news .newsSummary {
+  display: block;
+  display: -webkit-box;
+  height: 5em;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media screen and (max-width: 700px) {
   .form__section {
     padding: 10px !important;
@@ -457,5 +682,46 @@ ul {
   }
   .view {
     padding: 10px;
+  }
+  .navbarDisplay {
+    display: block !important;
+    padding: 6px 14px;
+    background-color: var(--color-default);
+    transition: all 0.5s ease;
+  }
+  .navbarDisplay .nan {
+    display: flex;
+  }
+  .navbarDisplay .nan h2 {
+    color: var(--color-white);
+  }
+  .navbarDisplay li:hover {
+    background-color: var(--color-default-light);
+    border-radius: 5px;
+  }
+  .navbarDisplay li div {
+    display: flex;
+    align-items: center;
+  }
+  .navbarDisplay li span {
+    font-size: 15px;
+    color: var(--color-white);
+  }
+  .navbarDisplay li i {
+    color: var(--color-white);
+    line-height: 60px;
+    min-width: 50px;
+    font-size: 25px;
+    text-align: center;
+  }
+  .navbarDisplay img {
+    width: 150px;
+    margin-right: 10px !important;
+  }
+  .navbarDisplay .navbar-toggler {
+    border: 1px solid var(--color-second) !important;
+  }
+  .navbarDisplay .navbar-toggler svg {
+    color: var(--color-white) !important;
   }
 }/*# sourceMappingURL=style.css.map */

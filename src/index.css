@@ -43,7 +43,10 @@
 .alert__message.success {
   color: green;
 }
-
+.btnNo{
+  border: 2px solid var(--color-black);
+  color: red !important;
+}
 .btnNoBg {
   border-radius: 10px;
   padding: 10px 20px;
@@ -55,23 +58,27 @@
   font-weight: 500;
   border-radius: 20px 50px;
   outline: none;
-  color: var(--color-secondary);
-  background-color: transparent;
-  border: 2px solid var(--color-secondary);
+  color: var(--color-black);
+  /* background-color: transparent; */
+  border: 2px solid var(--color-black);
 }
 .btnNoBg:hover{
     background-color: var(--color-secondary);
     color: var(--color-white);
 }
-
+.flex{
+  display: flex;
+  align-items: normal;
+}
 .btnNoBg2 {
   border-radius: 10px;
   padding: 10px 20px;
   font-size: 15px;
   border: none;
   text-align: center;
-  margin: 0 10px;
+  margin: 20px 10px;
   font-weight: 500;
+  max-height: 60px;
   border-radius: 20px 50px;
   outline: none;
   color: var(--color-primary);
