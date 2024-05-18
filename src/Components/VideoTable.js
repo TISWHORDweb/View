@@ -1,39 +1,59 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Video from './Video'
 
-function VideoTable() {
+function VideoTable({ video }) {
+    const [videos, setVideos] = useState([])
+    useEffect(() => {
+        setVideos(video)
+    }, [video])
     return (
         <div>
             <div className="Table mt-4">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Date & Time Added</th>
+                            <th scope="col">No</th>
+                            <th scope="col">Video</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Date_Added</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">ZP-139318</th>
-                            <td>Batimehin Emmanuel</td>
-                            <td>ebatimehin@gmail.com</td>
-                            <td>Male</td>
-                            <td>08/04/2024</td>
-                                <td className='' >
-                                <Link to="/admin/video/view">
-                                    <span className='black'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
-                                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                                        </svg>
-                                    </span>
-                                    </Link>
-                                </td>
-                           
-                        </tr>
+                        {videos ?
+                            <>
+                                {videos.map((each, i) => (
+                                    <tr>
+                                        <th scope="row">{i}</th>
+                                        <td style={{width:"20%"}}>
+                                            <Video
+                                                url={each.video}
+                                                height="100%"
+                                                width="100%"
+                                            />
+                                        </td>
+                                        <td>{each.title}</td>
+                                        <td>{each.description}</td>
+                                        <td>08/04/2024</td>
+                                        <td className='' >
+                                            <Link to={`/admin/video/view/${each.vid}`}>
+                                                <span className='black'>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                                    </svg>
+                                                </span>
+                                            </Link>
+                                        </td>
+
+                                    </tr>
+                                ))}
+                            </> :
+                            <div className="">
+                                <center>Loading, please wait......</center>
+                            </div>
+                        }
                     </tbody>
                 </table>
                 <div className="down">

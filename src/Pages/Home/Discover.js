@@ -21,7 +21,7 @@ function Discover() {
                                 <span className='pt-4 pb-4'>2 Minutes Ago</span>
                                 <h4>The Importance of Effective Contact Management in the Digital Age</h4>
                                 <p>Discuss the challenges of managing contacts across different platforms, and how your app solves them.</p>
-                                <button className='bn633-hover bn21'>Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <button className='bn633-hover bn21'>Watch <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
                                 </svg>
                                 </button>
@@ -33,7 +33,7 @@ function Discover() {
                                 <span className='pt-4 pb-4'>2 Minutes Ago</span>
                                 <h4>Top 5 Tips to Supercharge Your Contact Management</h4>
                                 <p>Offer practical tips for users to optimize their contact organization, highlighting how your app facilitates these practices.</p>
-                                <button className='bn633-hover bn21'>Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <button className='bn633-hover bn21'>Watch <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
                                 </svg>
                                 </button>
@@ -45,7 +45,7 @@ function Discover() {
                                 <span className='pt-4 pb-4'>2 Minutes Ago</span>
                                 <h4>The Future of Contact Management</h4>
                                 <p>Trends and Innovations" - Discuss technological advancements in contact management and how your app leads the way.</p>
-                                <button className='bn633-hover bn21'>Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <button className='bn633-hover bn21'>Watch <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
                                 </svg>
                                 </button>

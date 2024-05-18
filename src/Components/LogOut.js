@@ -27,7 +27,7 @@ function LogOut() {
                                         <p className='secondary'>Are you sure you want to log out ?</p>
                                         <div className="buttonss">
                                             <button  onClick={HandleLogout} type="button" class="btn success bn632-hover bn21">Yes</button>
-                                            <button type="button" class="btn cancel btnNoBg" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn cancel btnNoBg2" data-bs-dismiss="modal">Cancel</button>
                                         </div>
                                     </center>
                                 </div>

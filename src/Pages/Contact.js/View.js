@@ -57,7 +57,7 @@ function View() {
                 headers: {
                     'Content-Type': 'application/json;charset=UTF-8',
                     "Access-Control-Allow-Origin": "*",
-                    "r-token": token
+                    "v-token": token
                 }
             })
                 .then((res) => {
@@ -72,13 +72,13 @@ function View() {
         e.preventDefault();
         if (id) {
             setSpin(true)
-            const url = `${REACT_APP_USER_BASE_URL}/contact/delete/${id}`
+            const url = `${REACT_APP_USER_BASE_URL}/video/delete/${id}`
 
             axios.delete(url, {
                 headers: {
                     'Content-Type': 'application/json;charset=UTF-8',
                     "Access-Control-Allow-Origin": "*",
-                    "r-token": token
+                    "v-token": token
                 }
             })
                 .then((res) => {

@@ -58,12 +58,13 @@
   font-weight: 500;
   border-radius: 20px 50px;
   outline: none;
-  color: var(--color-black);
+  color: var(--color-black) !important;
+  background-color: var(--color-secondary);
   /* background-color: transparent; */
-  border: 2px solid var(--color-black);
+  border: 2px solid var(--color-black) !important;
 }
 .btnNoBg:hover{
-    background-color: var(--color-secondary);
+    background-color: #000;
     color: var(--color-white);
 }
 .flex{

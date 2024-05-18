@@ -3,6 +3,7 @@ import Layout from '../../Components/Layout'
 import Card from '../../Components/Card'
 import News from '../../Components/News'
 import BannerHeader from '../../Components/BannerHeader'
+import LogOut from '../../Components/LogOut'
 
 function Dashboard() {
     return (
@@ -12,6 +13,7 @@ function Dashboard() {
                     <BannerHeader />
                     <Card />
                     <News />
+                    <LogOut />
                 </div>
             </Layout>
         </div>

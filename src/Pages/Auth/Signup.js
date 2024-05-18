@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SuccessIcon from '../../Assets/image/Illustration.png'
 import { checkPasswordValidity } from '../../Utils/Core';
 import { REACT_APP_AUTH_BASE_URL } from '../../Utils/Urls';
@@ -9,7 +9,7 @@ function Signup() {
     const successRef = useRef(null);
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [fullname, setFullName] = useState("")
+    const [username, setUsername] = useState("")
     const [click, setClick] = useState(false);
     const [spin, setSpin] = useState(false);
     const [message, setMessage] = useState("");
@@ -39,7 +39,7 @@ function Signup() {
     const HandleRegister = ((e) => {
         e.preventDefault();
 
-        if (!email || !password || !fullname) {
+        if (!email || !password || !username) {
             setClick(true)
             setClassName("alert__message error")
             setMessage("Fill all fields and try again")
@@ -58,11 +58,11 @@ function Signup() {
             setSpin(true)
             const body = {
                 email,
-                fullname,
+                name: username,
                 password
             }
             console.log(body);
-            axios.post(`${REACT_APP_AUTH_BASE_URL}/register`, body, axiosConfig)
+            axios.post(`${REACT_APP_AUTH_BASE_URL}/admin/register`, body, axiosConfig)
                 .then(response => {
                     const data = response.data
                     console.log(data)
@@ -121,14 +121,14 @@ function Signup() {
             <div className='auth '>
                 <section class="form__section p-5">
                     <div class="container form__section-container p-5">
-                        <center className='mb-4'><h2>Sign In</h2></center>
+                        <center className='mb-4'><h2>Sign Up</h2></center>
                         {click ? <div className={className}>
                             <p>{message}</p>
                         </div> : ""}
                         <form className="">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control inputts" id="floatingInput31" onChange={(e) => setFullName(e.target.value)} placeholder="John Doe" />
-                                <label for="floatingInput">Full Name</label>
+                                <input type="text" class="form-control inputts" id="floatingInput31" onChange={(e) => setUsername(e.target.value)} placeholder="John Doe" />
+                                <label for="floatingInput">Username</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control inputts" id="floatingInput32" onChange={(e) => setEmail(e.target.value)} placeholder="name@example.com" />
@@ -143,6 +143,7 @@ function Signup() {
                                 {spin ? <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span> : <span></span>}
                                 Register
                             </button>
+                            <small>Have an account ? <Link to="/auth/register"> <span>Sign In</span></Link> </small>
                         </form>
                     </div>
                 </section>

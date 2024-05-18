@@ -1,3 +1,28 @@
+import { Cloudinary } from "cloudinary-core";
+new Cloudinary({ cloud_name: "dq5nc6lbr" });
+
+const UploadImage = async (file) => {
+    try {
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "Emmanuel");
+        formData.append("folder", "View");
+console.log(file);
+        const response = await fetch(
+            `https://api.cloudinary.com/v1_1/dq5nc6lbr/video/upload`,
+            {
+                method: "POST",
+                body: formData,
+            }
+        );
+
+        const data = await response.json();
+
+        return data.secure_url; // This is the URL of the uploaded image
+    } catch (error) {
+        console.error("Error uploading image:", error);
+    }
+};
 
 const checkPasswordValidity = (value) => {
     const isNonWhiteSpace = /^\S*$/;
@@ -58,6 +83,26 @@ const Check = () => {
     return Check
 }
 
+const TimeConverter = (timestamp) => {
+    const date = new Date(timestamp);
 
+    const monthNames = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+      ];
 
-export { Check, DateConverter, checkPasswordValidity }
+    // Extracting date components
+    const year = date.getFullYear();
+    const month = monthNames[date.getMonth()];
+    const day = date.getDate();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    // const seconds = date.getSeconds();
+
+    // Creating a formatted date string
+    const formattedDate = `${month} ${day}, ${year} - ${hours}:${minutes}`;
+
+    return formattedDate;
+}
+
+export { Check, TimeConverter, DateConverter, UploadImage, checkPasswordValidity }

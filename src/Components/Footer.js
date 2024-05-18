@@ -44,7 +44,7 @@ function Footer() {
                                     </li>
                                 </ul>
                             </div>
-                            {check ?
+                            {check === "true" ?
                                 <LogOut /> :
                                 <></>
                             }

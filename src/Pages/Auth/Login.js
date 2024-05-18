@@ -57,13 +57,25 @@ function Login() {
                         setSuccessMessage(data.message)
                         localStorage.setItem('userLoggedIn', true);
                         localStorage.setItem('nvm', data.data.token);
-                        const timerId = setTimeout(() => {
-                            navigate('/app');
-                            window.location.reload();
+                        if (data.data.who === 0) {
+                            const timerId = setTimeout(() => {
+                                navigate('/app');
+                                window.location.reload();
+    
+                            }, 4000);
+    
+                            return () => clearTimeout(timerId);
 
-                        }, 4000);
-
-                        return () => clearTimeout(timerId);
+                        } else if (data.data.who === 1) {
+                            const timerId = setTimeout(() => {
+                                navigate('/admin');
+                                window.location.reload();
+    
+                            }, 4000);
+    
+                            return () => clearTimeout(timerId);
+                        }
+                        
 
                     } else if (data.status === false){
                         setClick(true)

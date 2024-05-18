@@ -11,6 +11,7 @@ import User from '../Pages/Admin/User';
 import Video from '../Pages/Admin/Video';
 import Talent from '../Pages/Admin/Talent';
 import VideoActions from '../Pages/Video/VideoActions';
+import AllVideo from '../Pages/Video/AllVideo';
 // import { PrivateRoute } from '../Components/PrivateRoutes';
 
 
@@ -44,6 +45,10 @@ export const Routes = () => {
       path: '/app/contact/view/:id',
       element: < View />
     },
+    {
+      path: '/app/video/all',
+      element: < AllVideo />
+    },
     //**ADMIN */
     {
       path: '/admin',
@@ -58,7 +63,7 @@ export const Routes = () => {
       element: < Video />
     },
     {
-      path: '/admin/video/view',
+      path: '/admin/video/view/:id',
       element: < VideoActions />
     },
     {

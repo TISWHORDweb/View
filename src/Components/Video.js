@@ -1,19 +1,19 @@
 import React from 'react'
-import VideoLink from '../Assets/videos/video.mp4'
 import ReactPlayer from 'react-player';
 
-function Video() {
+function Video(props) {
+
     return (
         <div>
             <div className="">
                 <div className="video-background">
                     <ReactPlayer
-                        url={VideoLink}
+                        url={props.url}
                         playing
                         loop
                         muted
-                        width="100%"
-                        height="100%"
+                        width={props.width ? props.width : "100%"}
+                        height={props.height ? props.height : "100%"}
                     />
                 </div>
 

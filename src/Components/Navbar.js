@@ -7,9 +7,13 @@ import { Check } from '../Utils/Core'
 function Navbar(props) {
   const [check, setCheck] = useState()
   const [token, setToken] = useState()
-  const [firstName, setFirstname] = useState("")
-  const [lastName, setLastname] = useState("")
-  const [phone, setPhone] = useState("")
+  const [name, setName] = useState("")
+  const [facebook, setFacebook] = useState("")
+  const [tiktok, setTiktok] = useState("")
+  const [youtube, setYoutube] = useState("");
+  const [twitter, setTwitter] = useState("");
+  const [snapchat, setSnapchat] = useState("");
+  const [age, setAge] = useState("");
   const [click, setClick] = useState(false);
   const [spin, setSpin] = useState(false);
   const [message, setMessage] = useState("");
@@ -28,12 +32,12 @@ function Navbar(props) {
     headers: {
       'Content-Type': 'application/json;charset=UTF-8',
       "Access-Control-Allow-Origin": "*",
-      "r-token": token
+      "v-token": token
     }
   }
 
   const navigate = useNavigate();
-  
+
   const Clearer = () => {
     const timerId = setTimeout(() => {
       setClick(false)
@@ -45,17 +49,17 @@ function Navbar(props) {
 
   const Nav = () => {
     const timerId = setTimeout(() => {
-       navigate('/app/contact')
-       window.location.reload();
+      navigate('/app/contact')
+      window.location.reload();
     }, 3000);
 
     return () => clearTimeout(timerId);
-}
+  }
 
   const HandleCreate = ((e) => {
     e.preventDefault();
 
-    if (!lastName || !firstName || !phone) {
+    if (!name || !age || !tiktok) {
       setClick(true)
       setClassName("alert__message error")
       setMessage("Fill all fields and try again")
@@ -63,9 +67,13 @@ function Navbar(props) {
     } else {
       setSpin(true)
       const body = {
-        lastName,
-        firstName,
-        phone
+        name,
+        facebook,
+        snapchat,
+        tiktok,
+        twitter,
+        youtube,
+        age
       }
 
       axios.post(`${REACT_APP_USER_BASE_URL}/contact/create`, body, axiosConfig)
@@ -112,16 +120,33 @@ function Navbar(props) {
                     </div> : ""}
                     <form className="">
                       <div class="form-floating mb-3">
-                        <input type="text" class="form-control inputts" id="floatingInput11" onChange={(e) => setFirstname(e.target.value)} placeholder="name@example.com" />
-                        <label for="floatingInput">First Name</label>
+                        <input type="text" class="form-control inputts" id="floatingInput11" onChange={(e) => setName(e.target.value)} placeholder="Dancing, Music" />
+                        <label for="floatingInput">Your Talent</label>
                       </div>
                       <div class="form-floating mb-3">
-                        <input type="text" class="form-control inputts" id="floatingInput22" onChange={(e) => setLastname(e.target.value)} placeholder="Password" />
-                        <label for="floatingInput">Last Name</label>
+                        <input type="number" class="form-control inputts" id="floatingInput11" onChange={(e) => setAge(e.target.value)} placeholder="18" />
+                        <label for="floatingInput">Age</label>
+                      </div>
+                      <small>Your socials</small>
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control inputts" id="floatingInput22" onChange={(e) => setFacebook(e.target.value)} placeholder="John Doe" />
+                        <label for="floatingInput">Facebook</label>
                       </div>
                       <div class="form-floating mb-3">
-                        <input type="Number" class="form-control inputts" id="floatingInput33" onChange={(e) => setPhone(e.target.value)} placeholder="name@example.com" />
-                        <label for="floatingInput">Phone Number</label>
+                        <input type="text" class="form-control inputts" id="floatingInput33" onChange={(e) => setTwitter(e.target.value)} placeholder="@john" />
+                        <label for="floatingInput">Twitter </label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control inputts" id="floatingInput11" onChange={(e) => setTiktok(e.target.value)} placeholder="@doeJ" />
+                        <label for="floatingInput">Tiktok</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control inputts" id="floatingInput22" onChange={(e) => setSnapchat(e.target.value)} placeholder="@DJ" />
+                        <label for="floatingInput">Snapchat</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control inputts" id="floatingInput33" onChange={(e) => setYoutube(e.target.value)} placeholder="@DoeJohn" />
+                        <label for="floatingInput">Youtube </label>
                       </div>
                       <button type="submit" class="btn bn632-hover bn19 w-100 m-0 mt-4" onClick={HandleCreate}>
                         {spin ? <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span> : <span></span>}
@@ -136,45 +161,40 @@ function Navbar(props) {
         </div>
       </div>
       <div className="">
-      <div className="Navbar">
-        <nav class="navbar navbar-expand-lg ">
-          <div class="container">
-            <Link to="/">
-              <span class="navbar-brand" href="#">VIEW</span>
-            </Link>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav m-auto mt-0 mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <Link to="/">
-                    <span class={`nav-link ${props.color}`}  aria-current="page" >Home</span>
-                  </Link>
-                </li>
-                <li class="nav-item">
-                  <span class={`nav-link ${props.color}`} aria-current="page" >Videos</span>
-                </li>
-                {check === "true" ?
+        <div className="Navbar">
+          <nav class="navbar navbar-expand-lg ">
+            <div class="container">
+              <Link to="/">
+                <span class="navbar-brand" href="#">VIEW</span>
+              </Link>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mt-0 mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <Link to="/app/contact">
-                      <span class={`nav-link ${props.color}`}  >Contact</span>
+                    <Link to="/">
+                      <span class={`nav-link ${props.color}`} aria-current="page" >Home</span>
                     </Link>
-                  </li> : <></>}
-                
-                <li class="nav-item">
-                  <span class={`nav-link ${props.color}`}  aria-current="page" >About us</span>
-                </li>
-              </ul>
-              <div className="animate__animated animate__fadeInRight">
-                {check === "false" ?
-                  <button class="bn632-hover bn21" type="submit" data-bs-toggle="modal" data-bs-target="#createModal">Create Contact</button> :
-                  <Link to="/auth/login">  <button class="bn632-hover bn21" type="submit">Get Started</button></Link>}
+                  </li>
+                  <li class="nav-item">
+                    <Link to="/app/video/all">
+                      <span class={`nav-link ${props.color}`}  >Videos</span>
+                    </Link>
+                  </li>
+                  <li class="nav-item">
+                    <span class={`nav-link ${props.color}`} aria-current="page" >About us</span>
+                  </li>
+                </ul>
+                <div className="animate__animated animate__fadeInRight">
+                  {check === "true" ?
+                    <button class="bn632-hover bn21" type="submit" data-bs-toggle="modal" data-bs-target="#createModal">Sign up as Talent</button> :
+                    <Link to="/auth/login">  <button class="bn632-hover bn21" type="submit">Get Started</button></Link>}
+                </div>
               </div>
             </div>
-          </div>
-        </nav>
-      </div>
+          </nav>
+        </div>
       </div>
     </div>
   )
