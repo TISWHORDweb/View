@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import LogOut from './LogOut'
 import { Check } from '../Utils/Core'
+import { Link } from 'react-router-dom'
 
 function Footer() {
     const [check, setCheck] = useState()
@@ -17,10 +18,10 @@ function Footer() {
                             <h2 className='mb-4'>VIEW</h2>
                             <div className="links mb-3">
                                 <ul>
-                                    <li>Home</li>
-                                    <li>Pricing</li>
-                                    <li>About</li>
-                                    <li>Contact</li>
+                                    <Link to="/app"> <li className='white'>Home</li></Link>
+                                    <Link to="/app/video/all"> <li className='white'>Video</li></Link>
+                                    <Link to="#"> <li className='white'>About</li></Link>
+                                    <Link to="#"> <li className='white'>Contact</li></Link>
                                 </ul>
                             </div>
                             <div className="social mb-4">
