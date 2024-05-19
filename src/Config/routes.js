@@ -42,10 +42,6 @@ export const Routes = () => {
       element: < ViewVideo />
     },
     {
-      path: '/app/contact/view/:id',
-      element: < View />
-    },
-    {
       path: '/app/video/all',
       element: < AllVideo />
     },
