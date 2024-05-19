@@ -49,7 +49,7 @@ function Navbar(props) {
 
   const Nav = () => {
     const timerId = setTimeout(() => {
-      navigate('/app/contact')
+      navigate('/')
       window.location.reload();
     }, 3000);
 
@@ -76,7 +76,7 @@ function Navbar(props) {
         age
       }
 
-      axios.post(`${REACT_APP_USER_BASE_URL}/contact/create`, body, axiosConfig)
+      axios.post(`${REACT_APP_USER_BASE_URL}/talent/create`, body, axiosConfig)
         .then(response => {
           const data = response.data
           console.log(data);
@@ -111,10 +111,13 @@ function Navbar(props) {
         <div class="modal-dialog ">
           <div class="modal-content">
             <div class="modal-body AlertModal p-5">
-              <div className=' '>
+              <div className=''>
                 <section class="">
                   <div class="container ">
-                    <center className='mb-4'><h2>Create contact</h2></center>
+                    <div class="justify-content-space mb-3">
+                      <h3 className='mb-3 f20'>Create contact</h3>
+                      <button type="button" class=" cancel f20" data-bs-dismiss="modal"><i class='bx bx-x'></i></button>
+                    </div>
                     {click ? <div className={className}>
                       <p>{message}</p>
                     </div> : ""}
@@ -150,7 +153,7 @@ function Navbar(props) {
                       </div>
                       <button type="submit" class="btn bn632-hover bn19 w-100 m-0 mt-4" onClick={HandleCreate}>
                         {spin ? <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span> : <span></span>}
-                        Create
+                        Sign up
                       </button>
                     </form>
                   </div>
