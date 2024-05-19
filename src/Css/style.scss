@@ -223,9 +223,14 @@ h6 {
   cursor: pointer;
 }
 
-.Navbar .nav-link:hover {
+.Navbar .white:hover {
   border-bottom: 2px solid var(--color-primary);
   color: var(--color-white) !important;
+}
+
+.Navbar .black:hover {
+  border-bottom: 2px solid var(--color-primary);
+  color: var(--color-secondary) !important;
 }
 
 .Navbar .show {
@@ -293,21 +298,7 @@ h6 {
           align-items: center;
       }
   }
-  .btn {
-    display: inline-block;
-    width: fit-content;
-    padding: 0.6rem 1.2rem;
-    background-color: var(--color-primary);
-    border-radius: var(--card-border-radius-2);
-    cursor: pointer;
-    transition: var(--transition);
-    color: var(--color-white);
 
-    &:hover {
-        background: var(--color-white) !important;
-        color: var(--color-bg) !important;
-    }
-}
   input {
       background: transparent;
       margin-left: 0.7rem;
