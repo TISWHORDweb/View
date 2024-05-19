@@ -5,6 +5,7 @@ import { MyContext } from '../context/Context';
 function Search() {
 
     const { searchQuery, updateSearchQuery } = useContext(MyContext);
+
     return (
         <div>
             <center>
@@ -19,7 +20,6 @@ function Search() {
                             placeholder="Search videos..."
                         />
                     </div>
-                    <button type="submit" class="btn">Go</button>
                 </form>
             </section>
             </center>
