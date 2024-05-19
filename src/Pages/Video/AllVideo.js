@@ -8,7 +8,7 @@ import { MyContext } from '../../context/Context';
 import Search from '../../Components/Search';
 
 function AllVideo() {
-    const { videos } = useContext(MyContext);
+    const { filteredVideos } = useContext(MyContext);
 
     return (
         <div>
@@ -16,10 +16,11 @@ function AllVideo() {
             <div className="m50"></div>
             <Search />
             <div className="container mt-5">
-                {videos ?
+                {filteredVideos ?
                     <div className="Allvideos Discover">
                         <div className="row">
-                            {videos.map((each, i) => (
+                            {filteredVideos.length === 0 && <p>No Videos found matching your search.</p>}
+                            {filteredVideos.map((each, i) => (
                                 <VideoCard
                                     video={each.video}
                                     time={TimeConverter(each.createdAt)}
