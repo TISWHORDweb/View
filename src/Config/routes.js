@@ -38,7 +38,7 @@ export const Routes = () => {
       element: < Contact />
     },
     {
-      path: '/app/video/view',
+      path: '/app/video/view/:id',
       element: < ViewVideo />
     },
     {
