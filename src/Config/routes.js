@@ -4,7 +4,6 @@ import Home from '../Pages/Home/Home';
 import Login from '../Pages/Auth/Login';
 import Signup from '../Pages/Auth/Signup';
 import Contact from '../Pages/Contact.js/Contact';
-import View from '../Pages/Contact.js/View';
 import ViewVideo from '../Pages/Video/ViewVideo';
 import Dashboard from '../Pages/Admin/Dashboard';
 import User from '../Pages/Admin/User';
@@ -12,6 +11,8 @@ import Video from '../Pages/Admin/Video';
 import Talent from '../Pages/Admin/Talent';
 import VideoActions from '../Pages/Video/VideoActions';
 import AllVideo from '../Pages/Video/AllVideo';
+import LiveVideo from '../Pages/Video/LiveVideo';
+import ViewTalent from '../Pages/Admin/ViewTalent';
 // import { PrivateRoute } from '../Components/PrivateRoutes';
 
 
@@ -45,6 +46,10 @@ export const Routes = () => {
       path: '/app/video/all',
       element: < AllVideo />
     },
+    {
+      path: '/app/video/stream',
+      element: < LiveVideo />
+    },
     //**ADMIN */
     {
       path: '/admin',
@@ -66,5 +71,9 @@ export const Routes = () => {
       path: '/admin/talent',
       element: < Talent />
     },
+    {
+      path: '/admin/talent/view/:id',
+      element: < ViewTalent />
+    }
   ]);
 };
