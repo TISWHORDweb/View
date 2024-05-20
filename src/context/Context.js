@@ -1,6 +1,6 @@
 // MyContext.js
 import React, { createContext, useCallback, useEffect, useState } from 'react';
-import { REACT_APP_USER_BASE_URL } from '../Utils/Urls';
+import { REACT_APP_ADMIN_BASE_URL, REACT_APP_USER_BASE_URL } from '../Utils/Urls';
 import axios from 'axios';
 export const MyContext = createContext();
 
@@ -9,26 +9,53 @@ export const MyContextProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredVideos, setFilteredVideos] = useState([]);
   const [videos, setVideos] = useState([])
+  const [token, setToken] = useState()
+  const [insight, setInsight] = useState()
 
   const updateData = (newValue) => {
     setData(newValue);
   };
 
   useEffect(() => {
+    const Data = localStorage.getItem('nvm');
+    if (Data) {
+      setToken(Data)
+    }
+  }, [])
+
+  useEffect(() => {
     const url = `${REACT_APP_USER_BASE_URL}/video/all`
     axios.get(url, {
-        headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
-            "Access-Control-Allow-Origin": "*",
-        }
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+        "Access-Control-Allow-Origin": "*",
+      }
     })
+      .then((res) => {
+        const response = res.data.data
+        setVideos(response)
+      })
+      .catch((err) => console.log(err));
+
+  }, []);
+
+  useEffect(() => {
+    if (token) {
+      const url = `${REACT_APP_ADMIN_BASE_URL}/insight`
+      axios.get(url, {
+        headers: {
+          'Content-Type': 'application/json;charset=UTF-8',
+          "Access-Control-Allow-Origin": "*",
+          "v-token": token
+        }
+      })
         .then((res) => {
-            const response = res.data.data
-            setVideos(response)
+          const response = res.data.data
+          setInsight(response)
         })
         .catch((err) => console.log(err));
-
-}, []);
+    }
+  }, [token]);
 
   const updateSearchQuery = (newQuery) => {
     setSearchQuery(newQuery);
@@ -66,7 +93,8 @@ export const MyContextProvider = ({ children }) => {
       updateSearchQuery,
       filteredVideos,
       searchQuery,
-      videos
+      videos,
+      insight
     }}>
 
       {children}
