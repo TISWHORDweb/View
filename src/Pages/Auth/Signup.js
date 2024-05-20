@@ -62,7 +62,7 @@ function Signup() {
                 password
             }
             console.log(body);
-            axios.post(`${REACT_APP_AUTH_BASE_URL}/admin/register`, body, axiosConfig)
+            axios.post(`${REACT_APP_AUTH_BASE_URL}/register`, body, axiosConfig)
                 .then(response => {
                     const data = response.data
                     console.log(data)
@@ -77,7 +77,7 @@ function Signup() {
                             navigate('/auth/login');
                             window.location.reload();
 
-                        }, 4000);
+                        }, 3000);
                         setSpin(false)
                         return () => clearTimeout(timerId);
 
