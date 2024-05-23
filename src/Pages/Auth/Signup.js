@@ -143,7 +143,7 @@ function Signup() {
                                 {spin ? <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span> : <span></span>}
                                 Register
                             </button>
-                            <small>Have an account ? <Link to="/auth/register"> <span>Sign In</span></Link> </small>
+                            <small>Have an account ? <Link to="/auth/login"> <span>Sign In</span></Link> </small>
                         </form>
                     </div>
                 </section>

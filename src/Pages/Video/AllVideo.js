@@ -21,13 +21,15 @@ function AllVideo() {
                         <div className="row">
                             {filteredVideos.length === 0 && <p>No Videos found matching your search.</p>}
                             {filteredVideos.map((each, i) => (
-                                <VideoCard
-                                    video={each.video}
-                                    time={TimeConverter(each.createdAt)}
-                                    title={each.title}
-                                    description={each.description}
-                                    id={each.vid}
-                                />
+                                <div className="col-md-4 mb-3">
+                                    <VideoCard
+                                        video={each.video}
+                                        time={TimeConverter(each.createdAt)}
+                                        title={each.title}
+                                        description={each.description}
+                                        id={each.vid}
+                                    />
+                                </div>
                             ))}
                         </div>
                     </div> :

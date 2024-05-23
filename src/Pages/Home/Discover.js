@@ -7,9 +7,9 @@ function Discover() {
     const { videos } = useContext(MyContext);
     const [videosData, setVideoData] = useState([])
 
-    useEffect(()=>{
+    useEffect(() => {
         setVideoData(videos.slice(0, 3))
-    },[videos])
+    }, [videos])
 
     return (
         <div>
@@ -24,13 +24,15 @@ function Discover() {
                     {videosData ?
                         <div className="row">
                             {videosData.map((each, i) => (
-                                <VideoCard
-                                    video={each.video}
-                                    time={TimeConverter(each.createdAt)}
-                                    title={each.title}
-                                    description={each.description}
-                                    id={each.vid}
-                                />
+                                <div className="col-md-4 mb-3">
+                                    <VideoCard
+                                        video={each.video}
+                                        time={TimeConverter(each.createdAt)}
+                                        title={each.title}
+                                        description={each.description}
+                                        id={each.vid}
+                                    />
+                                </div>
                             ))}
                         </div> :
                         <div className="">
