@@ -316,18 +316,18 @@ h6 {
   width: 50%;
 }
 
-.view .each {
+.SBTV .each {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.view .each .sub {
+.SBTV .each .sub {
   font-size: 13px !important;
   color: var(--color-primary);
 }
 
-.view .each .value {
+.SBTV .each .value {
   font-size: 18px;
   font-weight: 500;
 }
@@ -599,15 +599,15 @@ ul {
   padding: 0;
 }
 
-.view a {
+.SBTV a {
   color: var(--color-primary);
 }
 
-.view a:hover {
+.SBTV a:hover {
   color: var(--color-secondary);
 }
 
-.view {
+.SBTV {
   padding: 30px;
 }
 
@@ -755,7 +755,7 @@ ul {
   .Table {
     overflow: scroll !important;
   }
-  .view {
+  .SBTV {
     padding: 10px;
   }
   .navbarDisplay {

@@ -39,7 +39,7 @@ export const Routes = () => {
       element: < Contact />
     },
     {
-      path: '/app/video/view/:id',
+      path: '/app/video/SBTV/:id',
       element: < ViewVideo />
     },
     {
@@ -64,7 +64,7 @@ export const Routes = () => {
       element: < Video />
     },
     {
-      path: '/admin/video/view/:id',
+      path: '/admin/video/SBTV/:id',
       element: < VideoActions />
     },
     {
@@ -72,7 +72,7 @@ export const Routes = () => {
       element: < Talent />
     },
     {
-      path: '/admin/talent/view/:id',
+      path: '/admin/talent/SBTV/:id',
       element: < ViewTalent />
     }
   ]);

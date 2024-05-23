@@ -63,12 +63,12 @@ function Nav() {
             <div className="">
                 <nav class="navbar navbar-expand-lg navbarDisplay">
                     <div class="container-fluid">
-                        <a class="navbar-brand nan" href="/"><h4>VIEW</h4></a>
+                        <a class="navbar-brand nan" href="/"><h4>SBTV</h4></a>
                         <button class="btn Nav-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bx bx-menu" id="btn" ></i></button>
 
                         <div class="offcanvas offcanvas-start w-300" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                             <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">VIEW</h5>
+                                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">SBTV</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
                             <div class="offcanvas-body">

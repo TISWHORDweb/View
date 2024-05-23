@@ -27,7 +27,7 @@ function Sidebar() {
                 <div class="logo_details">
                     {/* <i class="bx bxl-audible icon"></i> */}
                     {/* <img src={Logo} alt="" className='icon' /> */}
-                    <h4 className='white icon'>VIEW</h4>
+                    <h4 className='white icon'>SBTV</h4>
                     {!noItem ? <i class="bx bx-menu" id="btn" onClick={handleOpen}></i> :
                         <i class="bx bx-menu-alt-right" id="btn" onClick={handleClose}></i>}
                 </div>

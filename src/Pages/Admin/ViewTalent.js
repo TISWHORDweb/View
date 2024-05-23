@@ -192,7 +192,7 @@ function ViewTalent({id}) {
             </div>
             <div className="">
                 <div className=' '>
-                    <section class="view">
+                    <section class="SBTV">
                         <div class="container ">
                             <center className='mb-4'>
                                 <img src={Icon} className='w-20' alt="" />

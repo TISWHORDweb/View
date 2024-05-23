@@ -90,7 +90,7 @@ function UserTable({ user }) {
                     <div class="modal-content">
                         <div class="modal-body AlertModal p-5">
                             <div className=' '>
-                                <section class="view">
+                                <section class="SBTV">
                                     <div class="container ">
                                         <center className='mb-4'>
                                             <img src={Icon} className='w-20' alt="" />

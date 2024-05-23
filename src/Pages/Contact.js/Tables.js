@@ -58,8 +58,8 @@ function Tables() {
                                         <td>{each.firstName}</td>
                                         <td>{each.lastName}</td>
                                         <td>{each.phone}</td>
-                                        <td className='view'>
-                                        <Link to={`/app/contact/view/${each.cid}`}><li className='btnNoBg'> View</li></Link>
+                                        <td className='SBTV'>
+                                        <Link to={`/app/contact/SBTV/${each.cid}`}><li className='btnNoBg'> SBTV</li></Link>
                                         </td>
                                     </tr>
                                 ))}

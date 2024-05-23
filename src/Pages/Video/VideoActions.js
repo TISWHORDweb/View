@@ -183,7 +183,7 @@ function VideoActions() {
                 </div>
             </div>
             <Layout >
-                <LinkHeader many="3" where="/admin/video" page="Video" current="view" />
+                <LinkHeader many="3" where="/admin/video" page="Video" current="SBTV" />
                 {video ?
                     <div className="container">
                         <SingleVideo class="m20" video={video} />

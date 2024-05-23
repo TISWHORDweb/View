@@ -6,7 +6,7 @@ const UploadImage = async (file) => {
         const formData = new FormData();
         formData.append("file", file);
         formData.append("upload_preset", "Emmanuel");
-        formData.append("folder", "View");
+        formData.append("folder", "SBTV");
 console.log(file);
         const response = await fetch(
             `https://api.cloudinary.com/v1_1/dq5nc6lbr/video/upload`,

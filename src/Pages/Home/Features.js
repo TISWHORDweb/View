@@ -12,7 +12,7 @@ function Features() {
                     <center >
                         <div className="header">
                             <h1>More Features</h1>
-                            <p className='f15'>These are a few of the key features of View that distinguishit from other Contact platforms</p>
+                            <p className='f15'>These are a few of the key features of SBTV that distinguishit from other Contact platforms</p>
                         </div>
                     </center>
                     <div className="each mt-5">
@@ -30,7 +30,7 @@ function Features() {
                             <div className="col-md-4 mb-3">
                                 <img src={Img3} alt="" />
                                 <h4>Integration with Your Ecosystem:</h4>
-                                <p>Streamline your workflow further! Integrate View with your favorite tools and platforms. Seamlessly import contacts from your CRM, email provider, or calendar app, and eliminate the need for manual data entry. This ensures a centralized hub for all your contacts.</p>
+                                <p>Streamline your workflow further! Integrate SBTV with your favorite tools and platforms. Seamlessly import contacts from your CRM, email provider, or calendar app, and eliminate the need for manual data entry. This ensures a centralized hub for all your contacts.</p>
                             </div>
                         </div>
                     </div>
