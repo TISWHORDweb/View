@@ -65,24 +65,24 @@ function VideoActions() {
 
     const Nav = (check) => {
         const timerId = setTimeout(() => {
-            if(check === 1){
+            if (check === 1) {
                 navigate('/admin/video');
                 window.location.reload();
-            } else  if(check === 0){
+            } else if (check === 0) {
                 window.location.reload();
             }
-          
+
         }, 2000);
 
         return () => clearTimeout(timerId);
     }
 
-    useEffect(()=>{
-        if(video){
+    useEffect(() => {
+        if (video) {
             setTitle(video.title)
             setDescription(video.description)
         }
-    },[video])
+    }, [video])
 
     const HandleEdit = (e) => {
         e.preventDefault();
@@ -142,7 +142,7 @@ function VideoActions() {
                     if (status) {
                         setSpin(false)
                         setClick(true)
-                        setMessage("Contact deleted successfully")
+                        setMessage("Video deleted successfully")
                         setClassName("alert__message success")
                         Nav(1)
                     }
@@ -160,7 +160,7 @@ function VideoActions() {
 
     return (
         <div>
-                 <div class="modal fade" id="deleteVideoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="deleteVideoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog ">
                     <div class="modal-content">
                         <div class="modal-body p-5">

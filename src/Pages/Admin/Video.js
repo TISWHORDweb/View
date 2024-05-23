@@ -127,7 +127,7 @@ function Video() {
                 <div className="m20"></div>
                 {video ?
                 <div className="container">
-                    <Modal title=" Add Video" id="userModal" >
+                    <Modal title=" Add Video" id="videoModal" >
                         <div className='p-5'>
                             <section class="">
                                 <div class="container ">
