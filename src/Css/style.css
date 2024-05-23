@@ -479,6 +479,27 @@ h6 {
   background-color: #efefef;
 }
 
+.form__sectionBg {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.loadWrapper {
+  height: 100vh;
+  position: relative;
+  background-color: var(--color-primary-light);
+}
+.loadWrapper .loader {
+  position: absolute;
+  top: 45%;
+  left: 40%;
+}
+.loadWrapper .loaderHeightWeight {
+  width: 50px;
+  height: 50px;
+}
+
 .form__section small {
   margin-top: 1rem;
   display: block;
