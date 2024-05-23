@@ -1,9 +1,7 @@
-import React, { useContext } from 'react'
-import { MyContext } from '../context/Context';
+import React from 'react'
 import { DateConverter } from '../Utils/Core';
 
-function Card() {
-    const { insight } = useContext(MyContext);
+function Card({insight}) {
 
     return (
         <div>
