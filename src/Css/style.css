@@ -509,6 +509,29 @@ h6 {
   color: var(--color-primary);
 }
 
+.list ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.list ul li {
+  border: 1px solid var(--color-primary);
+  margin: 10px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: var(--color-primary);
+}
+.list ul li span {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0 5px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
 .form__section-container {
   width: var(--form-width);
   background-color: var(--color-primary-light);
