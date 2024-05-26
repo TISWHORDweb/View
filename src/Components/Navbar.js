@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios';
 import { REACT_APP_USER_BASE_URL } from '../Utils/Urls';
 import { Link, useNavigate } from 'react-router-dom'
 import { Check } from '../Utils/Core'
+import { MyContext } from '../context/Context';
 
 function Navbar(props) {
+  const { talentList } = useContext(MyContext)
   const [check, setCheck] = useState()
   const [token, setToken] = useState()
   const [name, setName] = useState("")
@@ -122,10 +124,16 @@ function Navbar(props) {
                       <p>{message}</p>
                     </div> : ""}
                     <form className="">
-                      <div class="form-floating mb-3">
-                        <input type="text" class="form-control inputts" id="floatingInput11" onChange={(e) => setName(e.target.value)} placeholder="Dancing, Music" />
-                        <label for="floatingInput">Your Talent</label>
-                      </div>
+                      {talentList?
+                        <div className="mb-3">
+                        <label htmlFor="discount" className='fw3 f15'>Your Talent</label>  <br />
+                        <select class="form-select inputts selectHolder" onChange={(e) => setName(e.target.value)} aria-label="Default select example">
+                          <option  ><span>select</span></option>
+                          {talentList.map((each, i) => (
+                            <option value={each.name} ><span>{each.name}</span></option>
+                          ))}
+                        </select>
+                      </div> : <></>}
                       <div class="form-floating mb-3">
                         <input type="number" class="form-control inputts" id="floatingInput11" onChange={(e) => setAge(e.target.value)} placeholder="18" />
                         <label for="floatingInput">Age</label>
@@ -168,7 +176,7 @@ function Navbar(props) {
           <nav class="navbar navbar-expand-lg ">
             <div class="container">
               <Link to="/">
-                <span class="navbar-brand" href="#">SBTV</span>
+                <span class="navbar-brand" href="/">SBTV</span>
               </Link>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

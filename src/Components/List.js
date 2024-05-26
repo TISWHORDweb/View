@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { REACT_APP_ADMIN_BASE_URL } from '../Utils/Urls'
 import axios from 'axios'
 import CautionImg from '../Assets/image/Group 5647.png'
+import { MyContext } from '../context/Context'
 
-function List({ list }) {
-    const [lists, setLists] = useState([])
+function List() {
+    const {talentList}= useContext(MyContext)
     const [id, setID] = useState([])
     const [click, setClick] = useState("");
     const [spin, setSpin] = useState("");
@@ -12,9 +13,6 @@ function List({ list }) {
     const [className, setClassName] = useState("");
     const [token, setToken] = useState()
 
-    useEffect(() => {
-        setLists(list)
-    }, [list])
 
     useEffect(() => {
         const Data = localStorage.getItem('nvm');
@@ -99,10 +97,10 @@ function List({ list }) {
                     </div>
                 </div>
             </div>
-            {lists ?
+            {talentList ?
                 <div className="list">
                     <ul>
-                        {lists.map((each, i) => (
+                        {talentList.map((each, i) => (
                             <li>{each.name} <span data-bs-toggle="modal" data-bs-target="#deleteListModal" onClick={() => setID(each.tlid)}><b>x</b></span></li>
                         ))}
                     </ul>

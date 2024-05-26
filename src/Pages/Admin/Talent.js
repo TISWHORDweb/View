@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Layout from '../../Components/Layout'
 import LinkHeader from '../../Components/LinkHeader'
 import TalentTable from '../../Components/TalentTable'
@@ -7,10 +7,10 @@ import axios from 'axios'
 import Modal from '../../Components/Modal'
 import List from '../../Components/List'
 import Loader from '../../Components/Loader'
+import { MyContext } from '../../context/Context'
 
 function Talent() {
-    const [talents, setTalents] = useState([])
-    const [talentList, setTalentList] = useState([])
+    const {talents}= useContext(MyContext)
     const [talentName, setTalentName] = useState([])
     const [click, setClick] = useState("");
     const [spin, setSpin] = useState("");
@@ -26,25 +26,6 @@ function Talent() {
             setToken(Data)
         }
     }, [])
-
-    useEffect(() => {
-        if (token) {
-            const url = `${REACT_APP_ADMIN_BASE_URL}/talent/all`
-            axios.get(url, {
-                headers: {
-                    'Content-Type': 'application/json;charset=UTF-8',
-                    "Access-Control-Allow-Origin": "*",
-                    "v-token": token
-                }
-            })
-                .then((res) => {
-                    const response = res.data.data
-                    setTalents(response.talent)
-                    setTalentList(response.list)
-                })
-                .catch((err) => console.log(err));
-        }
-    }, [token]);
 
     let axiosConfig = {
         headers: {
@@ -145,7 +126,7 @@ function Talent() {
                                 </section>
                             </div>
                         </Modal>
-                        <List list={talentList} />
+                        <List />
                         <TalentTable talent={talents} />
                     </div>
                 </Layout> :

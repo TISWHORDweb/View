@@ -9,6 +9,8 @@ export const MyContextProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredVideos, setFilteredVideos] = useState([]);
   const [videos, setVideos] = useState([])
+  const [talents, setTalents] = useState([])
+  const [talentList, setTalentList] = useState([])
   const [token, setToken] = useState()
   const [insight, setInsight] = useState()
 
@@ -57,6 +59,23 @@ export const MyContextProvider = ({ children }) => {
     }
   }, [token]);
 
+  useEffect(() => {
+    const url = `${REACT_APP_ADMIN_BASE_URL}/talent/all`
+    axios.get(url, {
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+        "Access-Control-Allow-Origin": "*",
+      }
+    })
+      .then((res) => {
+        const response = res.data.data
+        setTalents(response.talent)
+        setTalentList(response.list)
+      })
+      .catch((err) => console.log(err));
+
+  }, []);
+
   const updateSearchQuery = (newQuery) => {
     setSearchQuery(newQuery);
     filterVideos(newQuery); // Trigger filtering based on new query
@@ -94,7 +113,9 @@ export const MyContextProvider = ({ children }) => {
       filteredVideos,
       searchQuery,
       videos,
-      insight
+      insight,
+      talents,
+      talentList
     }}>
 
       {children}
